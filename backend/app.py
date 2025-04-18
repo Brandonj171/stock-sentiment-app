@@ -4,7 +4,7 @@ from finvizfinance.quote import finvizfinance
 from transformers import pipeline
 from flask_cors import CORS
 import pandas as pd
-
+import os
 # Initialize Flask app
 app = Flask(__name__)
 CORS(app)
@@ -83,4 +83,5 @@ def home():
 
 # Run server
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))  # Render provides PORT
+    app.run(host='0.0.0.0', port=port, debug=True)
