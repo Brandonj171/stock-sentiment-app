@@ -1,4 +1,5 @@
 Stock Sentiment Analyzer
+
 A full-stack web application that performs real-time sentiment analysis on stock tickers based on the latest news headlines. It uses a pre-trained transformer model from Hugging Face (distilbert-base-uncased-finetuned-sst-2-english) and live data via Finviz.
 
 Features
