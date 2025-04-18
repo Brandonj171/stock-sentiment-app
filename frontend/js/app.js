@@ -13,7 +13,7 @@ if (!ticker) {
 } else {
   title.textContent = `📊 Sentiment for ${ticker}`;
 
-  fetch(`http://127.0.0.1:5000/get_sentiment?ticker=${ticker}&time_range=1d`)
+  fetch(`https://stock-sentiment-backend.onrender.com/get_sentiment?ticker=${ticker}&time_range=1d`)
     .then(res => res.json())
     .then(data => {
       summary.innerHTML = `
