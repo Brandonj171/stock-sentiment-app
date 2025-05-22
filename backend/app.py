@@ -50,28 +50,32 @@ def analyze_sentiment():
     headlines = get_headlines(ticker, time_range)
 
     results = []
-    total_score = 0
+    total_signed_score = 0
     positive_count = 0
     negative_count = 0
 
     for row in headlines:
         sentiment, score = get_sentiment(row['Title'])
+        signed_score = score if sentiment == 'POSITIVE' else -score
+
         results.append({
             'headline': row['Title'],
             'sentiment': sentiment,
             'score': score
         })
-        total_score += score
+
+        total_signed_score += signed_score
+
         if sentiment == 'POSITIVE':
             positive_count += 1
         elif sentiment == 'NEGATIVE':
             negative_count += 1
 
-    overall_score = total_score / len(results) if results else 0
+    overall_score = total_signed_score / len(results) if results else 0
 
     return jsonify({
         'headlines': results,
-        'overall_sentiment_score': overall_score,
+        'overall_sentiment_score': round(overall_score, 3),
         'positive_count': positive_count,
         'negative_count': negative_count
     })
