@@ -11,14 +11,15 @@ const chartContainer = document.getElementById("chart");
 if (!ticker) {
   title.textContent = "No ticker provided.";
 } else {
-  title.textContent = `📊 Sentiment for ${ticker}`;
+  title.textContent = ` Sentiment for ${ticker}`;
 
   fetch(`https://stock-sentiment-backend.onrender.com/get_sentiment?ticker=${ticker}&time_range=1d`)
     .then(res => res.json())
     .then(data => {
       summary.innerHTML = `
-        <h4>🧠 Overall Sentiment Score: ${data.overall_sentiment_score.toFixed(2)}</h4>
-        <p>👍 Positive: ${data.positive_count} | 👎 Negative: ${data.negative_count}</p>
+        <h4>Overall Sentiment Score: ${data.overall_sentiment_score.toFixed(2)}</h4>
+        <p>👍 Positive: ${data.positive_count} | 👎 Negative: ${data.negative_count}
+         |-> Range from -1 to 0 to 1, with -1 indicating negativity, 0 neutrality, and 1 positivity</p>
       `;
 
       data.headlines.forEach(h => {
