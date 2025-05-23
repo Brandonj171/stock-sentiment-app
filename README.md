@@ -21,5 +21,6 @@ Backend	Python, Flask, Flask-CORS
 Machine Learning	Transformers (Hugging Face)
 Data Sources	FinvizFinance, Yahoo Finance (via yahoo_fin)
 
-![Screenshot 2025-04-18 170838](https://github.com/user-attachments/assets/b0495ab8-75ed-4dbb-8756-73f3055f61ad)
-![Screenshot 2025-04-18 170819](https://github.com/user-attachments/assets/69961d23-9df1-4e0b-9866-a9290bcd50ec)
+![Screenshot 2025-05-22 205110](https://github.com/user-attachments/assets/d0bdc607-3166-48c6-9156-6a079e8c67c1)
+![Screenshot 2025-05-22 210744](https://github.com/user-attachments/assets/1721f8c3-fc6a-4b1b-81cc-fb0736c2076f)
+
